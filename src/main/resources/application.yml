@@ -1,0 +1,24 @@
+logging:
+  file: logs/elasticsearch-boot.log
+  level:
+    root: info
+
+server:
+  port: 9999
+
+spring:
+  aop:
+    proxy-target-class: true
+  mvc:
+    static-path-pattern: /static/**
+
+  thymeleaf:
+    cache: false
+
+  #Cluster node port configuration
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enabled: true
